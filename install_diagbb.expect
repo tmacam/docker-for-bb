@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+set timeout 100
+
+spawn /tmp/diagbb-1.0.64.run;
+expect "Instal"
+send "\r"
+expect "OK"
+send "\r"
+expect "OK"
+send "\r"
+expect "Reinicie"
+send "\r"

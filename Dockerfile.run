@@ -1,0 +1,16 @@
+FROM tmacam/bb:run
+
+
+# rodar o init
+
+RUN /etc/init.d/warsaw restart
+
+COPY load_warsaw_and_run_firefox.sh /tmp
+RUN chmod -v 755 /tmp/load_warsaw_and_run_firefox.sh
+
+USER bbuser
+
+
+# from /etc/xdg/autostart/warsaw.desktop
+# /usr/local/bin/warsaw/core &
+CMD ["/tmp/load_warsaw_and_run_firefox.sh"]
